@@ -1,4 +1,6 @@
-# react-chakra-ui-template
+# moji-count
+
+入力した文字数をカウントできる完全オフラインで動作するWebアプリケーション
 
 ---
 
