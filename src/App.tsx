@@ -1,5 +1,6 @@
 import { Text, Textarea, Center, Grid, GridItem } from "@chakra-ui/react";
 import { useState } from "react";
+import Header from "./components/Header";
 
 function App() {
 	const [input, setInput] = useState<string>("");
@@ -18,19 +19,17 @@ function App() {
 				fontWeight="bold"
 			>
 				{/* TODO : Header */}
-				<GridItem pl="2" bg="orange.300" area={"header"}>
-					Header
+				<GridItem area={"header"}>
+					<Header />
 				</GridItem>
 				<GridItem p="8" area={"main"}>
 					<Center height="full">
-						<Textarea value={input} onChange={(e) => setInput(e.target.value)}/>
+						<Textarea value={input} placeholder="type here" onChange={(e) => setInput(e.target.value)}/>
 					</Center>
 					<Text>count: {input.length}</Text>
 				</GridItem>
 				{/* TODO : Footer */}
-				<GridItem pl="2" bg="blue.300" area={"footer"}>
-					Footer
-				</GridItem>
+				<GridItem pl="2" bg="white" area={"footer"}></GridItem>
 			</Grid>
 		</>
 	);
