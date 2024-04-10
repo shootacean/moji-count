@@ -1,6 +1,7 @@
-import { Text, Textarea, Center, Grid, GridItem } from "@chakra-ui/react";
+import { Center, Grid, GridItem, Text, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import Header from "./components/Header";
+import { count } from "./lib/count";
 
 function App() {
 	const [input, setInput] = useState<string>("");
@@ -24,12 +25,18 @@ function App() {
 				</GridItem>
 				<GridItem p="8" area={"main"}>
 					<Center height="full">
-						<Textarea value={input} placeholder="type here" onChange={(e) => setInput(e.target.value)}/>
+						<Textarea
+							value={input}
+							placeholder="type here"
+							onChange={(e) => setInput(e.target.value)}
+						/>
 					</Center>
-					<Text>count: {input.length}</Text>
+					<Text>count: {count(input)}</Text>
 				</GridItem>
 				{/* TODO : Footer */}
-				<GridItem pl="2" bg="white" area={"footer"}></GridItem>
+				<GridItem pl="2" bg="white" area={"footer"}>
+					文字数カウント
+				</GridItem>
 			</Grid>
 		</>
 	);
