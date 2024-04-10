@@ -1,7 +1,7 @@
-import { Center, Grid, GridItem, Text, Textarea } from "@chakra-ui/react";
+import { Center, Flex, Grid, GridItem, Text, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import Header from "./components/Header";
-import { count } from "./lib/count";
+import { count, countLine } from "./lib/count";
 
 function App() {
 	const [input, setInput] = useState<string>("");
@@ -31,7 +31,10 @@ function App() {
 							onChange={(e) => setInput(e.target.value)}
 						/>
 					</Center>
-					<Text>count: {count(input)}</Text>
+					<Flex gap="2">
+						<Text>文字数: {count(input)}</Text>
+						<Text>行数: {countLine(input)}</Text>
+					</Flex>
 				</GridItem>
 				{/* TODO : Footer */}
 				<GridItem pl="2" bg="white" area={"footer"}>

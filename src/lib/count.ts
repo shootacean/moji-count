@@ -15,3 +15,13 @@ import { runes } from 'runes2';
 export function count(s: string): number {
 	return runes(s).length;
 }
+
+/**
+ * 文字列内の行数をカウントする
+ * @param s 
+ * @returns 
+ */
+export function countLine(s: string): number {
+	if (s === '') return 0;
+	return (s.match(/\n/g) || []).length + 1;
+}
